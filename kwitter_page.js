@@ -18,7 +18,11 @@ function getData() { firebase.database().ref("/"+room_name).on('value', function
     firebase_message_id = childKey;
     message_data = childData;
 //Start code
-
+console.log(firebase_message_id);
+    console.log(message_data); name = message_data['name'];
+    message = message_data['message']; like = message_data['like'];
+    name_with_tag = "<h4> "+ name +"<img class='user_tick' src='tick.png'>";
+    message_with_tag = "<h4 class='message_h4'>" + message + "</h4>";
 //End code
  } });  }); }
 getData();
