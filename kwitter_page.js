@@ -40,3 +40,13 @@ function send(){
     });
     document.getElementById("msg").value = "";
 }
+function updateLike(message_id) {
+console.log("Like is clicked" + message_id);
+button_id    = message_id;
+likes = document.getElementById(button_id).value;
+updatedLikes = Number[likes] + 1;
+console.log(updatedLikes);
+firebase.database().ref(room_name).child(message).update({
+    likes : updatedLikes
+});
+}
